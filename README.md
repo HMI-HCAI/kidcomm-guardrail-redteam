@@ -13,6 +13,7 @@
 | `redteam_cases.json` | 44 条用例。每条写明 `basis`(预期值依据,指向被测 Skill 的 SKILL.md / skill-card.md 条目);带 `review_needed` 的条目,预期值需要团队确认 |
 | `run_redteam.py` | 运行器,按类别统计漏拦与误杀 |
 | `generate_variants.py` | 调本地模型批量生成改写变体,输出可直接交给运行器的用例文件 |
+| `DGX_SETUP.md` | 在 DGX Spark 上启动本地模型服务的步骤 |
 | `REPORT.md` | 针对被测仓库 commit `c036c46` 的评测结果和规则修改建议 |
 
 ## 运行
@@ -39,6 +40,8 @@ python run_redteam.py --guardrail <护栏路径> --cases variants.json --json va
 ```
 
 人工标注的 44 条是基准,模型生成的变体单独统计,两份结果不合并。
+
+DGX Spark 上怎么起本地模型服务,见 [DGX_SETUP.md](DGX_SETUP.md)。
 
 ## 判定口径
 
